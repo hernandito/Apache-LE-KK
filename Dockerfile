@@ -23,16 +23,9 @@ rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
  mv /usr/lib/node_modules/KodiKontrol/config.js \
 	/defaults/ && \
 
-# cleanup
- apk del --purge \
-	build-dependencies && \
- npm cache clean && \
- rm -rf \
-	/tmp
 
 # add local files
 COPY root/ /
-
 
 ADD config/ /root/
 
