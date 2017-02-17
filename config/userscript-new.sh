@@ -1,11 +1,11 @@
 #!/bin/bash
 
 
-
+apt-get update
 apt-get install -y python-software-properties
 apt-get install -y git
 curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
-apt-get install nodejs
+apt-get install -y nodejs
 
 node -v
 npm -v
