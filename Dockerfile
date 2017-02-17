@@ -4,31 +4,22 @@ MAINTAINER hernandito
 # copy sources.list
 COPY sources.list /etc/apt/
 
-ENV APTLIST="libapache2-mod-php5 wget mc git inotify-tools php5-gd php5-sqlite php5-mcrypt php5-tidy php5-mysql python-software-properties nodejs libapache2-mod-proxy-html"
+ENV APTLIST="libapache2-mod-php5 wget mc git inotify-tools php5-gd php5-sqlite php5-mcrypt php5-tidy php5-mysql libapache2-mod-proxy-html"
 
 # install main packages
 RUN apt-get update -q && \
 apt-get install $APTLIST -qy && \
 
-curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
-
 # cleanup
-#apt-get clean -y && \
+apt-get clean -y && \
 rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# install kodi kontrol
- npm install -g \
-	async \
-	programmerben/KodiKontrol && \
 
-# config kodikontrol
- mv /usr/lib/node_modules/KodiKontrol/config.js \
-	/defaults/ && \
+
+ADD config/ /root/
 
 # add local files
 COPY root/ /
-
-ADD config/ /root/
 
 ADD firstrun.sh /etc/my_init.d/firstrun.sh
 RUN chmod +x /etc/my_init.d/firstrun.sh
