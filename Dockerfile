@@ -31,8 +31,19 @@ RUN mkdir -p /app/static/clips
 RUN mkdir -p /app/presets
 RUN mkdir -p /app/settings
 
-ADD services.json /app/settings/settings.json
-ADD 
+
+RUN apt-get update
+RUN apt-get install -y python-software-properties
+RUN apt-get install -y git
+RUN apt-get install -y nano
+RUN apt-get install python-setuptools python-dev build-essential 
+RUN easy_install pip
+RUN pip install --upgrade virtualenv 
+
+
+
+ADD settings.json /app/settings/settings.json
+ADD presets.json /app/presets/presets.json
 RUN chmod -R 777 /app/
 
 RUN mkdir -p /etc/letsencrypt
