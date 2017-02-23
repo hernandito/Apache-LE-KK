@@ -36,7 +36,7 @@ RUN apt-get update
 RUN apt-get install -y python-software-properties
 RUN apt-get install -y git
 RUN apt-get install -y nano
-RUN apt-get install python-setuptools python-dev build-essential 
+RUN apt-get install -y python-setuptools python-dev build-essential 
 RUN easy_install pip
 RUN pip install --upgrade virtualenv 
 
