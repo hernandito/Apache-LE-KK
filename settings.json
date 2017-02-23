@@ -1,0 +1,10 @@
+{
+    "port": 5005,
+    "securePort": 5006,
+
+
+    "auth": {
+        "username": "",
+        "password": ""
+    }
+}
