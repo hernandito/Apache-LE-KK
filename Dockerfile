@@ -23,9 +23,6 @@ ADD config/ /root/
 # add local files
 COPY root/ /
 
-COPY run.sh /run.sh
-RUN chmod u+rwx /run.sh
-
 
 ADD firstrun.sh /etc/my_init.d/firstrun.sh
 RUN chmod +x /etc/my_init.d/firstrun.sh
