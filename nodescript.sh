@@ -17,17 +17,8 @@ curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 apt-get install -y nodejs
 
 npm install --production
-pip install requests yaep pytz pycountry fuzzywuzzy python-Levenshtein
 
-
-cd /app
-curl -L https://github.com/jishi/node-sonos-http-api/archive/master.tar.gz | tar xz --strip-components=1 -C /app
-chmod -R 777 /config/
-chmod -R 777 /app/
 node -v
 npm -v
-
-cd /app
-npm start
 
 
