@@ -16,7 +16,7 @@ fi
 cp /root/userscript-new.sh /config/userscript-new.sh
 chmod +x /config/userscript-new.sh
 
-cp /root/unodescript.sh /config/nodescript.sh
+cp /root/nodescript.sh /config/nodescript.sh
 chmod +x /config/nodescript.sh
 
 
